@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // REGISTER FORM 
+    // ===== REGISTER FORM =====
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', function (e) {
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const phoneRegex = /^[0-9+\-\s]{7,15}$/;
+            const passRegex  = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
 
             if (name.length < 2) {
                 document.getElementById('name-error').textContent = 'Name must be at least 2 characters';
@@ -27,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('email-error').textContent = 'Invalid email address';
                 valid = false;
             }
-            if (pass.length < 8) {
-                document.getElementById('pass-error').textContent = 'Password must be at least 8 characters';
+            if (!passRegex.test(pass)) {
+                document.getElementById('pass-error').textContent = 'Password must be at least 8 characters and include a number';
                 valid = false;
             }
             if (!country) {

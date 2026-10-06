@@ -1,0 +1,578 @@
+
+/* ===============================
+   Shoppn Theme – Pink
+   =============================== */
+
+:root {
+    --burgundy: #880e4f;
+    --burgundy-dark: #ad1457;
+    --burgundy-light: #e91e63;
+    --blush: #ffc0cb;
+    --blush-light: #fce4ec;
+    --blush-dark: #ffcce0;
+    --cream: #fff;
+    --text: #880e4f;
+    --text-muted: #ad1457;
+    --white: #FFFFFF;
+    --shadow: 0 8px 20px rgba(0,0,0,0.1);
+    --shadow-hover: 0 12px 25px rgba(0,0,0,0.15);
+    --radius: 14px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #fce4ec;
+    color: #880e4f;
+    line-height: 1.6;
+}
+
+/* ===== RIBBON HEADER (light blush) ===== */
+.site-header,
+header {
+    background: #fce4ec;
+    color: #880e4f;
+    padding: 0.85rem 0;
+    margin: 1rem 1.25rem 0;
+    border-radius: 50px;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.1),
+        0 1px 4px rgba(0,0,0,0.1);
+    border: 1px solid #ffcce0;
+    position: sticky;
+    top: 0.75rem;
+    z-index: 100;
+}
+
+.site-header .container,
+header .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+/* Logo – left */
+.logo a {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #880e4f;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.25s ease;
+}
+
+.logo a:hover {
+    color: #ad1457;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #880e4f;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #ad1457;
+}
+
+nav .welcome-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #880e4f;
+}
+
+/* ========== CONTAINER ========== */
+main.container,
+.container {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+}
+
+/* ========== HERO / HOME ========== */
+.hero {
+    background: linear-gradient(145deg, #FFFFFF, #fce4ec);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid #ffcce0;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #880e4f;
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.welcome-msg {
+    color: #ad1457;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ========== FORMS (Register / Login / Admin) ========== */
+form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #ffcce0;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+}
+
+form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    color: #880e4f;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ffcce0;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #fce4ec;
+    color: #880e4f;
+    transition: var(--transition);
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #e91e63;
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(255, 192, 203, 0.5);
+}
+
+form button,
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #e91e63, #880e4f);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.75rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(233, 30, 99, 0.3);
+}
+
+form button:hover,
+.btn:hover {
+    background: linear-gradient(135deg, #ad1457, #880e4f);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(173, 20, 87, 0.4);
+}
+
+.btn-danger,
+button[style*="color:red"] {
+    background: linear-gradient(135deg, #e91e63, #ad1457) !important;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #ad1457, #880e4f) !important;
+}
+
+/* ========== ALERTS ========== */
+.alert,
+div[style*="color: green"],
+div[style*="color: red"] {
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
+
+div[style*="color: green"] {
+    background: #E8F5E9;
+    color: #2E7D32 !important;
+    border: 1px solid #A5D6A7;
+}
+
+div[style*="color: red"],
+.alert-error {
+    background: #FFEBEE;
+    color: #C62828 !important;
+    border: 1px solid #EF9A9A;
+}
+
+.error {
+    color: #C62828;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+/* ========== PAGE TITLES ========== */
+h1, h2 {
+    color: #880e4f;
+    margin-bottom: 1.25rem;
+}
+
+h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #ffcce0;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* ========== BRAND CARDS ========== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.brand-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid #ffcce0;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #e91e63, #ffcce0);
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: #e91e63;
+}
+
+.brand-card .brand-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #ffc0cb, #ffcce0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: #880e4f;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.35);
+}
+
+.brand-card h3 {
+    color: #880e4f;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.brand-card .brand-id {
+    color: #ad1457;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.brand-card .card-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.brand-card .card-actions a,
+.brand-card .card-actions button {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+}
+
+.brand-card .card-actions a {
+    background: #ffc0cb;
+    color: #880e4f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.brand-card .card-actions a:hover {
+    background: #880e4f;
+    color: var(--white);
+}
+
+.brand-card form {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    max-width: none;
+}
+
+.brand-card form button {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+/* ========== ADMIN FORM SECTION ========== */
+.admin-form-section {
+    background: var(--white);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #ffcce0;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.admin-form-section form {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    max-width: none;
+}
+
+/* ===== FOOTER ===== */
+.site-footer,
+footer {
+    background: linear-gradient(to right, #e91e63, #880e4f);
+    color: #fce4ec;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+.site-footer p,
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ========== ACCOUNT PAGE ========== */
+.account-info {
+    background: var(--white);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #ffcce0;
+    margin-bottom: 1.5rem;
+    max-width: 480px;
+}
+
+.account-info p {
+    margin-bottom: 0.6rem;
+}
+
+.account-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* ========== LINKS ========== */
+a {
+    color: #e91e63;
+}
+
+main a:hover {
+    color: #880e4f;
+}
+
+p a {
+    font-weight: 600;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+    }
+}
+
+/* ========== ADMIN DASHBOARD ========== */
+
+.dashboard-intro {
+    color: #ad1457;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+/* Dashboard Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Individual Dashboard Card */
+.dash-card {
+    display: block;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #ffcce0;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: #880e4f;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Card Hover */
+.dash-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #e91e63;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Icon */
+.dash-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 105, 180, 0.35);
+    border: 2px solid #ffcce0;
+    border-radius: 50%;
+
+    color: #880e4f;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+/* Icon Hover */
+.dash-card:hover .dash-icon {
+    background: #e91e63;
+    color: #ffffff;
+    border-color: #e91e63;
+    transform: scale(1.08);
+}
+
+/* Card Heading */
+.dash-card h3 {
+    color: #880e4f;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+/* Card Description */
+.dash-card p {
+    color: #ad1457;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Remove default link styling */
+.dash-card:visited,
+.dash-card:active {
+    color: #880e4f;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dash-card {
+        padding: 1.75rem 1.25rem;
+    }
+}

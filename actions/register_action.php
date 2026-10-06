@@ -24,8 +24,9 @@ if (empty($name) || strlen($name) < 5) {
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 50) {
     $errors[] = 'Valid email is required (max 50 characters)';
 }
-if (strlen($pass) < 8) {
-    $errors[] = 'Password must be at least 8 characters';
+// Password: min 8 characters + at least one digit
+if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/', $pass)) {
+    $errors[] = 'Password must be at least 8 characters and include number, alphabets and characters';
 }
 if (empty($country)) {
     $errors[] = 'Country is required';

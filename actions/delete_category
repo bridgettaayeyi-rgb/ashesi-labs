@@ -1,0 +1,31 @@
+<?php
+require_once __DIR__ . '/../core/core.php';
+require_once __DIR__ . '/../controller/ProductController.php';
+
+require_admin();
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: ../views/admin/category.php');
+    exit;
+}
+
+$id = intval($_POST['cat_id'] ?? 0);
+
+if ($id <= 0) {
+    $_SESSION['error'] = 'Invalid category ID.';
+    header('Location: ../views/admin/category.php');
+    exit;
+}
+
+$controller = new ProductController();
+$result = $controller->deleteCategory($id);
+
+if ($result) {
+    $_SESSION['success'] = 'Category deleted successfully.';
+} else {
+    $_SESSION['error'] = 'Failed to delete category.';
+}
+
+
+header('Location: ../views/admin/category.php');
+exit;

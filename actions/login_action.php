@@ -32,7 +32,12 @@ if (isset($result['success']) && $result['success'] === true) {
     $_SESSION['customer_email'] = $customer['customer_email'];
     $_SESSION['user_role']      = $customer['user_role'];
 
-    header('Location: ../index.php');
+    // Admins go to dashboard; customers go to home
+    if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 1) {
+        header('Location: ../views/admin/dashboard.php');
+    } else {
+        header('Location: ../index.php');
+    }
     exit;
 
 } else {
